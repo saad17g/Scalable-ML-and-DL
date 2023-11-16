@@ -80,10 +80,16 @@ def g():
     print(history_df)
     history_df = pd.concat([history_df, monitor_df])
 
+    # save the last 4 predicted values
     df_recent = history_df.tail(4)
     dfi.export(df_recent, "./df_recent.png", table_conversion="matplotlib")
     dataset_api = project.get_dataset_api()
     dataset_api.upload("./df_recent.png", "Resources/images", overwrite=True)
+
+    # save the last predicted value
+    df_last = history_df.tail(1)
+    dfi.export(df_last, "./df_last.png", table_conversion="matplotlib")
+    dataset_api.upload("./df_last.png", "Resources/images", overwrite=True)
 
     predictions = history_df["prediction"]
     labels = history_df[["label"]]

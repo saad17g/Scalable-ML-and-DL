@@ -13,10 +13,10 @@ dataset_api.download("Resources/images/df_recent.png")
 # dataset_api.download("Resources/images/confusion_matrix.png")
 
 with gr.Blocks() as demo:
-    # with gr.Row():
-    #   with gr.Column():
-    #       gr.Label("Today's Predicted Image")
-    #       input_img = gr.Image("latest_iris.png", elem_id="predicted-img")
+    with gr.Row():
+        with gr.Column():
+            gr.Label("Today's Predicted Image")
+            input_img = gr.Image("df_last.png", elem_id="predicted-img")
     #   with gr.Column():
     #       gr.Label("Today's Actual Image")
     #       input_img = gr.Image("actual_iris.png", elem_id="actual-img")

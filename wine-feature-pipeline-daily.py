@@ -17,6 +17,11 @@ if LOCAL == False:
 
 
 def calculate_probabilities(dataframe):
+    """
+    for every column, we calculate the pdf (probability distribution function)
+    so that when generating a random wine, we can use these pdfs to randomly select
+    the values of each column
+    """
     import scipy
 
     mu = dataframe["alcohol"].mean()
@@ -56,7 +61,7 @@ def calculate_probabilities(dataframe):
 
 def get_random_wine(dataframe):
     """
-    Returns a DataFrame containing one random iris flower
+    Returns a DataFrame containing one random wine
     """
     import pandas as pd
     import random
