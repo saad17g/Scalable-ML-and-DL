@@ -125,5 +125,6 @@ if __name__ == "__main__":
     if LOCAL == True:
         g()
     else:
+        stub.deploy("wine_daily_inference")
         with stub.run():
             f()

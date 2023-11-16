@@ -24,6 +24,8 @@ def calculate_probabilities(dataframe):
     """
     import scipy
 
+    print("calculating probabilities")
+
     mu = dataframe["alcohol"].mean()
     sig = dataframe["alcohol"].std()
     dataframe["p_alcohol"] = dataframe["alcohol"].apply(
@@ -66,6 +68,8 @@ def get_random_wine(dataframe):
     import pandas as pd
     import random
 
+    print("getting a random wine")
+
     random_quality = random.randint(3, 9)
     random_quality_str = str(random_quality)
     filtered = dataframe.query("quality==" + random_quality_str).reset_index(drop=True)
@@ -87,7 +91,18 @@ def get_random_wine(dataframe):
         }
     )
     wine_df["quality"] = random_quality
-
+    print(
+        "generated random wine with quality:",
+        random_quality,
+        " and alcohol:",
+        wine_df["alcohol"],
+        "and chlorides:",
+        wine_df["chlorides"],
+        "and volatile_acidity:",
+        wine_df["volatile_acidity"],
+        "and density:",
+        wine_df["density"],
+    )
     return wine_df
 
 
