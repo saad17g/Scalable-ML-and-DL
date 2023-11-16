@@ -104,6 +104,7 @@ def g():
     wine_df = calculate_probabilities(wine_df)
 
     wine_entry_df = get_random_wine(wine_df)
+    print("inserted wine_entry has quality: ", wine_entry_df.quality)
 
     wine_fg.insert(wine_entry_df)
 

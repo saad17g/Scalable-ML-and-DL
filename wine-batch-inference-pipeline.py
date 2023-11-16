@@ -4,7 +4,7 @@ import modal
 LOCAL = False
 
 if LOCAL == False:
-    stub = modal.Stub()
+    stub = modal.Stub("wine_daily_inference")
     hopsworks_image = modal.Image.debian_slim().pip_install(
         ["hopsworks", "joblib", "seaborn", "scikit-learn==1.1.1", "dataframe-image"]
     )
