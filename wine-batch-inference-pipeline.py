@@ -95,17 +95,22 @@ def g():
     labels = history_df[["label"]]
 
     # Only create the confusion matrix when our wine_predictions feature group has examples of all 6 quality types
+    rounded_predictions = pd.DataFrame({"rounded_prediction": predictions.round()})
+
+    print("labels", labels)
+    print("int pred", rounded_predictions)
     print(
-        "Number of different flower predictions to date: "
-        + str(predictions.value_counts().count())
+        "Number of different wine predictions to date: "
+        + str(rounded_predictions.value_counts().count())
     )
-    if predictions.value_counts().count() == 6:
-        results = confusion_matrix(labels, predictions)
+    print("Number of different wine labels: " + str(labels.value_counts().count()))
+    if labels.value_counts().count() >= 5:
+        results = confusion_matrix(labels, rounded_predictions)
 
         df_cm = pd.DataFrame(
             results,
-            ["True 3", "True 4", "True 5", "True 6", "True 7", "True 8"],
-            ["Pred 3", "Pred 4", "Pred 5", "Pred 6", "Pred 7", "Pred 8"],
+            ["True 4", "True 5", "True 6", "True 7", "True 8"],
+            ["Pred 4", "Pred 5", "Pred 6", "Pred 7", "Pred 8"],
         )
 
         cm = sns.heatmap(df_cm, annot=True)

@@ -70,7 +70,7 @@ def get_random_wine(dataframe):
 
     print("getting a random wine")
 
-    random_quality = random.randint(3, 9)
+    random_quality = random.randint(4, 8)
     random_quality_str = str(random_quality)
     filtered = dataframe.query("quality==" + random_quality_str).reset_index(drop=True)
 
