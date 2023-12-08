@@ -1,3 +1,7 @@
+# UI 
+
+You can find the UI of this application in the following link: https://huggingface.co/spaces/saad177/whisper-ru
+
 # Whisper
 
 We used a model-centric approach to improve our model.
