@@ -1,5 +1,15 @@
 # Diabetes prediction model
 
+## UI Links
+
+- Prediction App: https://huggingface.co/spaces/saad177/Diabetes-Prediction
+- Monitoring App: https://huggingface.co/spaces/saad177/Diabetes-Prediction-Monitoring
+
+The prediction UI contains 3 parts. 
+- The input part, where the user fills  the values for the 4 features
+- The prediction part, where we output the model's prediction
+- The explainability part, where we plot different graphs to explain the model's decision, for eg. which feature was the most impactful for the given prediction.
+
 ## Dataset
 
 [Diabetes prediction dataset](https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset)
@@ -58,3 +68,10 @@ and saves 1000 records to Hopsworks feature store every day.
 
 More details can be found
 here: [diabetes-feature-pipeline-daily.py](diabetes-feature-pipeline-daily.py)
+
+## Users data usage:
+
+If consented, we collect users data and save it in a feature group on Hopsworks. This data is used for 2 purposes:
+
+- Monitoring resources (eg. Confusion matrix) used for the monitoring app
+- Retraining the model, on-demand through the same training pipeline, by uncommenting a part in the code. In this case, we retrain the model on the initial dataset + users data
