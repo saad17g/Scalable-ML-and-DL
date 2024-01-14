@@ -1,5 +1,6 @@
 # Diabetes prediction model
-
+## Diagram of the Application
+![image](https://github.com/saad17g/Scalable-ML-and-DL/assets/96499884/6023f4f2-ff36-4c9e-b976-39fe321384e8)
 ## UI Links
 
 - Prediction App: https://huggingface.co/spaces/saad177/Diabetes-Prediction
